@@ -98,10 +98,10 @@ QueueTemplate* HandleQueue::accessToAnyElement(const size_t position) {
         for (size_t iCount = 0; iCount < sizeQueue; iCount++) {
             temp = queue_obj.front();
             queue_obj.pop();
-            if (iCount == position) {
+            queue_obj.push(temp);
+            if (iCount == position-1) {
                 returnValue = &queue_obj.back();
             }
-            queue_obj.push(temp);
         }
     }
     return returnValue;
